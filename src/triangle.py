@@ -14,11 +14,7 @@ class Triangle(Figure):
 
 
     def get_area(self):
-        semi_perimeter = (
-                            self.side_a
-                            + self.side_b
-                            + self.side_c
-        ) / 2
+        semi_perimeter = self.get_perimeter() / 2
         return (
                 semi_perimeter
                 * (semi_perimeter - self.side_a)
@@ -28,8 +24,3 @@ class Triangle(Figure):
 
     def get_perimeter(self):
         return  self.side_a + self.side_b + self.side_c
-
-    def add_area(self, other_figure):
-        if not isinstance(other_figure, Triangle):
-            raise ValueError("Can not add area")
-        return self.get_area() + other_figure.get_area()

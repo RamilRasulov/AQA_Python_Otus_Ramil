@@ -1,4 +1,6 @@
 from src.figure import Figure
+
+
 class Rectangle(Figure):
     def __init__(self, side_a, side_b):
         super().__init__()
@@ -14,10 +16,3 @@ class Rectangle(Figure):
 
     def get_perimeter(self):
         return 2 * (self.side_a + self.side_b)
-
-    def add_area(self, other_figure):
-        if not isinstance(other_figure, Rectangle):
-            raise ValueError("Can not add area")
-        return self.get_area() + other_figure.get_area()
-
-
